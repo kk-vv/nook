@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#000"/>
+  <defs>
+    <radialGradient id="rg">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity=".15"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="150" cy="150" r="140" fill="url(#rg)"/>
+  <rect x="10" y="10" width="280" height="280" rx="8" fill="none" stroke="#F59E0B" stroke-width="1" opacity=".3"/>
+  <line x1="10" y1="30" x2="290" y2="30" stroke="#F59E0B" stroke-width=".5" opacity=".3"/>
+  <circle cx="24" cy="20" r="4" fill="#FF5F57" opacity=".6"/>
+  <circle cx="38" cy="20" r="4" fill="#FFBD2E" opacity=".6"/>
+  <circle cx="52" cy="20" r="4" fill="#28C840" opacity=".6"/>
+  <text x="25" y="40" fill="#F59E0B" font-family="monospace" font-size="14" opacity=".2">{</text>
+  <text x="265" y="75" fill="#F59E0B" font-family="monospace" font-size="14" opacity=".2">}</text>
+  <text x="40" y="265" fill="#F59E0B" font-family="monospace" font-size="14" opacity=".2">{</text>
+  <text x="250" y="250" fill="#F59E0B" font-family="monospace" font-size="14" opacity=".2">}</text>
+  <foreignObject x="0" y="0" width="300" height="300">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="width:300px;height:300px;display:flex;align-items:center;justify-content:center;">
+      <pre style="font-family:'Courier New',Courier,monospace;font-size:20px;line-height:1.5em;color:#F59E0B;margin:0;">   (___)    &#10;   (\__/)   &#10;  ( ×  × )  &#10; =(  ..  )= &#10;  (&quot;)__(&quot;)  </pre>
+    </div>
+  </foreignObject>
+</svg>

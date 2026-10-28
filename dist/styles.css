@@ -1,6 +1,6 @@
 :root {
   color-scheme: dark;
-  --bg: #050606;
+  --bg: #040607;
   --text: #efeee9;
   --muted: #777a79;
   --soft: #a7aaa7;
@@ -17,13 +17,33 @@ html {
 }
 
 body {
+  position: relative;
+  isolation: isolate;
   min-height: 100vh;
   margin: 0;
   overflow-x: hidden;
-  background: var(--bg);
+  background:
+    radial-gradient(circle at 78% -8%, rgb(28 184 207 / 5%), transparent 34%),
+    radial-gradient(circle at 8% 62%, rgb(113 79 158 / 3%), transparent 32%),
+    var(--bg);
   color: var(--text);
   font-family: var(--sans);
   -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgb(58 205 224 / 2.1%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(58 205 224 / 2.1%) 1px, transparent 1px),
+    linear-gradient(180deg, transparent 0%, rgb(39 173 194 / 1.8%) 54%, transparent 100%);
+  background-size: 56px 56px, 56px 56px, 100% 100%;
+  mask-image: linear-gradient(to bottom, transparent, #000 17%, #000 86%, transparent);
+  opacity: 0.72;
 }
 
 .signal-field {
@@ -225,8 +245,8 @@ img {
   aspect-ratio: 1;
   border-radius: 50%;
   background: var(--glow);
-  filter: blur(120px);
-  opacity: 0.34;
+  filter: blur(145px);
+  opacity: 0.2;
   transition: opacity 500ms ease, transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -237,8 +257,8 @@ img {
 }
 
 .project-image:hover::before {
-  opacity: 0.54;
-  transform: scale(1.13);
+  opacity: 0.29;
+  transform: scale(1.06);
 }
 
 .project-image > img {
@@ -254,29 +274,19 @@ img {
   transform: translateY(-4px) scale(1.035);
 }
 
-.project-image-grid {
+.project-image-grid,
+.project-image-buddy {
   --glow: #715b14;
   background: #090906;
 }
 
-.project-image-grid > img {
+.project-image-buddy {
+  --glow: #f59e0b;
+}
+
+.project-image-grid > img,
+.project-image-buddy > img {
   image-rendering: pixelated;
-}
-
-.project-image-claude {
-  --glow: #743821;
-  background: #090807;
-}
-
-.project-image-claude > img {
-  width: min(31%, 290px);
-  height: auto;
-  image-rendering: pixelated;
-  filter: drop-shadow(16px 20px 0 rgb(217 119 82 / 9%));
-}
-
-.project-image-claude:hover > img {
-  filter: drop-shadow(22px 26px 0 rgb(217 119 82 / 14%));
 }
 
 .project-info {
@@ -413,11 +423,6 @@ img {
   .project-image > img {
     width: 74%;
     height: 74%;
-  }
-
-  .project-image-claude > img {
-    width: 48%;
-    height: auto;
   }
 
   .footer {
