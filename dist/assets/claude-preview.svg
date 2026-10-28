@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#000"/>
+  <circle cx="30" cy="25" r="1" fill="#fff" opacity=".6"/>
+  <circle cx="85" cy="55" r="1.5" fill="#fff" opacity=".4"/>
+  <circle cx="250" cy="40" r="1" fill="#fff" opacity=".7"/>
+  <circle cx="190" cy="80" r="1.5" fill="#fff" opacity=".3"/>
+  <circle cx="60" cy="260" r="1" fill="#fff" opacity=".5"/>
+  <circle cx="270" cy="220" r="1.5" fill="#fff" opacity=".6"/>
+  <circle cx="140" cy="20" r="1" fill="#fff" opacity=".4"/>
+  <circle cx="200" cy="270" r="1" fill="#fff" opacity=".5"/>
+  <rect x="10" y="10" width="280" height="280" rx="20" fill="none" stroke="#9CA3AF" stroke-width="1.5" opacity=".3"/>
+  <text x="25" y="40" fill="#9CA3AF" font-family="monospace" font-size="14" opacity=".2">{</text>
+  <text x="265" y="75" fill="#9CA3AF" font-family="monospace" font-size="14" opacity=".2">}</text>
+  <text x="40" y="265" fill="#9CA3AF" font-family="monospace" font-size="14" opacity=".2">{</text>
+  <text x="250" y="250" fill="#9CA3AF" font-family="monospace" font-size="14" opacity=".2">}</text>
+  <g fill="#9CA3AF" font-family="monospace" font-size="20" text-anchor="middle">
+    <text x="150" y="120">}~(______)~{</text>
+    <text x="150" y="150">}~(✦ .. ✦)~{</text>
+    <text x="150" y="180">( .--. )</text>
+    <text x="150" y="210">(_/  \_)</text>
+  </g>
+  <circle cx="245" cy="55" r="3" fill="#9CA3AF" opacity=".8">
+    <animate attributeName="opacity" values=".4;1;.4" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="55" cy="240" r="2" fill="#9CA3AF" opacity=".6">
+    <animate attributeName="opacity" values=".3;.8;.3" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="260" cy="240" r="2.5" fill="#9CA3AF" opacity=".7">
+    <animate attributeName="opacity" values=".5;1;.5" dur="1.8s" repeatCount="indefinite"/>
+  </circle>
+</svg>
