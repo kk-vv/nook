@@ -1,11 +1,20 @@
+@font-face {
+  font-family: "Oxanium";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("./assets/oxanium-latin.woff2") format("woff2");
+}
+
 :root {
   color-scheme: dark;
   --bg: #040607;
   --text: #efeee9;
   --muted: #777a79;
   --soft: #a7aaa7;
-  --mono: "SFMono-Regular", "Roboto Mono", "Cascadia Mono", "Liberation Mono", monospace;
-  --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --display: "Oxanium", "Avenir Next", sans-serif;
+  --mono: "Oxanium", "SFMono-Regular", "Roboto Mono", monospace;
+  --sans: "Oxanium", "Avenir Next", sans-serif;
 }
 
 * {
@@ -53,6 +62,8 @@ body::before {
   width: 100%;
   height: 100%;
   pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
 }
 
 ::selection {
@@ -73,7 +84,7 @@ img {
 .page,
 .footer {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: min(calc(100% - 48px), 1040px);
   margin: 0 auto;
 }
@@ -88,14 +99,18 @@ img {
 
 .profile-body {
   position: relative;
+  z-index: 1;
+  isolation: isolate;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .profile-body::before {
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   top: 42px;
   left: 50%;
   width: clamp(260px, 42vw, 430px);
@@ -106,6 +121,13 @@ img {
   filter: blur(8px);
   transform: translate(-50%, -50%);
   pointer-events: none;
+}
+
+.profile-avatar,
+.profile h1,
+.profile-links {
+  position: relative;
+  z-index: 1;
 }
 
 .profile-avatar {
@@ -127,13 +149,25 @@ img {
   height: 100%;
 }
 
+.avatar-picture,
+.avatar-picture img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.avatar-picture img {
+  max-width: none;
+  object-fit: cover;
+}
+
 .profile h1 {
   margin: 24px 0 0;
-  font-family: var(--mono);
-  font-size: clamp(34px, 4vw, 44px);
-  font-weight: 500;
+  font-family: var(--display);
+  font-size: clamp(34px, 4vw, 46px);
+  font-weight: 600;
   line-height: 1;
-  letter-spacing: -0.06em;
+  letter-spacing: 0.08em;
 }
 
 .profile-links {
@@ -176,6 +210,11 @@ img {
   height: 19px;
 }
 
+.profile-links .brand-icon-eth {
+  width: 18px;
+  height: 18px;
+}
+
 .profile-links .brand-icon-mail {
   width: 19px;
   height: 19px;
@@ -210,10 +249,15 @@ img {
 }
 
 .project-card {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: end;
   min-width: 0;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .project-image {
@@ -230,6 +274,8 @@ img {
   border-radius: 3px;
   background: #090907;
   box-shadow: 0 34px 100px rgb(0 0 0 / 35%);
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .project-image::before,
@@ -261,16 +307,27 @@ img {
   transform: scale(1.06);
 }
 
-.project-image > img {
+.project-image > img,
+.project-image > picture {
   position: relative;
   z-index: 1;
   width: min(53%, 520px);
   height: 78%;
-  object-fit: contain;
   transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1), filter 650ms ease;
 }
 
-.project-image:hover > img {
+.project-image > img,
+.project-image > picture > img {
+  object-fit: contain;
+}
+
+.project-image > picture > img {
+  width: 100%;
+  height: 100%;
+}
+
+.project-image:hover > img,
+.project-image:hover > picture {
   transform: translateY(-4px) scale(1.035);
 }
 
@@ -285,6 +342,7 @@ img {
 }
 
 .project-image-grid > img,
+.project-image-grid > picture > img,
 .project-image-buddy > img {
   image-rendering: pixelated;
 }
@@ -301,11 +359,11 @@ img {
 
 .project-info h3 {
   margin: 0;
-  font-family: var(--mono);
+  font-family: var(--display);
   font-size: clamp(17px, 2vw, 21px);
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1;
-  letter-spacing: -0.04em;
+  letter-spacing: 0.025em;
 }
 
 .project-info p {
@@ -420,7 +478,8 @@ img {
     min-height: 0;
   }
 
-  .project-image > img {
+  .project-image > img,
+  .project-image > picture {
     width: 74%;
     height: 74%;
   }

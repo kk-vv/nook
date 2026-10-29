@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="nookvoid — digital artist and onchain creator." />
+    <meta name="description" content="NOOKVOID — digital artist and onchain creator." />
     <meta name="theme-color" content="#070707" />
-    <title>nookvoid</title>
+    <title>NOOKVOID</title>
     <link rel="icon" type="image/png" href="./assets/avatar.png?v=3" />
     <link rel="apple-touch-icon" href="./assets/avatar.png?v=3" />
-    <link rel="stylesheet" href="./styles.css?v=5" />
-    <script type="module" src="./script.js?v=5"></script>
+    <link rel="stylesheet" href="./styles.css?v=9" />
+    <script type="module" src="./script.js?v=7"></script>
   </head>
   <body>
     <canvas class="signal-field" data-signal-field aria-hidden="true"></canvas>
@@ -22,14 +22,14 @@
             href="https://opensea.io/item/ethereum/0x9b7a60e76f59037d152adbbafa8c6db591b274ac/300580"
             target="_blank"
             rel="noreferrer"
-            aria-label="View nookvoid avatar NFT on OpenSea"
+            aria-label="View NOOKVOID avatar NFT on OpenSea"
           >
             <svg
               class="avatar-hex"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 132 152"
               role="img"
-              aria-label="nookvoid avatar NFT"
+              aria-label="NOOKVOID avatar NFT"
             >
               <defs>
                 <linearGradient id="avatar-border" x1="14" y1="132" x2="118" y2="19" gradientUnits="userSpaceOnUse">
@@ -47,24 +47,23 @@
                 fill="url(#avatar-border)"
                 d="M66 0c3.8 0 6.5.8 9.2 2.4l49.6 28.7c4.9 2.8 7.2 7 7.2 12.7v64.4c0 5.7-2.3 9.9-7.2 12.7l-49.6 28.7c-5.8 3.2-12.6 3.2-18.4 0L7.2 120.9C2.3 118.1 0 113.9 0 108.2V43.8c0-5.7 2.3-9.9 7.2-12.7L56.8 2.4C59.5.8 62.2 0 66 0Z"
               />
-              <image
-                href="./assets/avatar.png"
-                width="132"
-                height="152"
-                preserveAspectRatio="xMidYMid slice"
-                clip-path="url(#avatar-clip)"
-              />
+              <foreignObject x="4" y="4" width="124" height="144" clip-path="url(#avatar-clip)">
+                <picture xmlns="http://www.w3.org/1999/xhtml" class="avatar-picture">
+                  <source srcset="./assets/avatar.avif" type="image/avif" />
+                  <img src="./assets/avatar.png" alt="" />
+                </picture>
+              </foreignObject>
             </svg>
           </a>
 
-          <h1 id="profile-name">nookvoid</h1>
+          <h1 id="profile-name">NOOKVOID</h1>
 
           <nav class="profile-links" aria-label="Profile links">
             <a
               href="https://x.com/nookvoid"
               target="_blank"
               rel="noreferrer"
-              aria-label="nookvoid on X"
+              aria-label="NOOKVOID on X"
               title="X"
             >
               <img class="brand-icon brand-icon-x" src="./assets/x-official.svg" alt="" />
@@ -78,7 +77,16 @@
             >
               <img class="brand-icon brand-icon-opensea" src="./assets/opensea-official-white.svg" alt="" />
             </a>
-            <a href="mailto:vivid3799@gmail.com" aria-label="Email nookvoid" title="Email">
+            <a
+              href="https://opensea.io/ens/nookvoid.eth"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="View nookvoid.eth on OpenSea"
+              title="nookvoid.eth"
+            >
+              <img class="brand-icon brand-icon-eth" src="./assets/ethereum.svg" alt="" />
+            </a>
+            <a href="mailto:vivid3799@gmail.com" aria-label="Email NOOKVOID" title="Email">
               <img class="brand-icon brand-icon-mail" src="./assets/mail.svg" alt="" />
             </a>
           </nav>
@@ -99,7 +107,10 @@
               rel="noreferrer"
               aria-label="View Grid Skull on OpenSea"
             >
-              <img src="./assets/grid-skull.png" alt="Grid Skull NFT preview" />
+              <picture>
+                <source srcset="./assets/grid-skull.avif" type="image/avif" />
+                <img src="./assets/grid-skull.png" alt="Grid Skull NFT preview" />
+              </picture>
             </a>
 
             <div class="project-info">
@@ -164,7 +175,7 @@
     </main>
 
     <footer class="footer">
-      <p>© <span data-year>2026</span> nookvoid</p>
+      <p>© <span data-year>2026</span> NOOKVOID</p>
       <p>All rights reserved.</p>
     </footer>
   </body>

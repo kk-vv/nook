@@ -1,4 +1,4 @@
-import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.min.js";
+import * as THREE from "./vendor/three-0.180.0/three.module.min.js";
 
 const year = document.querySelector("[data-year]");
 
@@ -8,16 +8,24 @@ if (year) {
 
 const field = document.querySelector("[data-signal-field]");
 
-if (field instanceof HTMLCanvasElement) {
+const initSignalField = (field) => {
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const renderer = new THREE.WebGLRenderer({
-    canvas: field,
-    alpha: true,
-    antialias: true,
-    powerPreference: "low-power",
-  });
+  const compactViewport = window.matchMedia("(max-width: 760px)").matches;
+  let renderer;
+
+  try {
+    renderer = new THREE.WebGLRenderer({
+      canvas: field,
+      alpha: true,
+      antialias: !compactViewport,
+      powerPreference: "low-power",
+    });
+  } catch {
+    field.hidden = true;
+    return;
+  }
   renderer.setClearColor(0x000000, 0);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.6));
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, compactViewport ? 1.25 : 1.6));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 0.94;
@@ -205,4 +213,8 @@ if (field instanceof HTMLCanvasElement) {
 
   resize();
   render();
+};
+
+if (field instanceof HTMLCanvasElement) {
+  initSignalField(field);
 }
