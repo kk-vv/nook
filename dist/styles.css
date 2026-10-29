@@ -23,6 +23,7 @@
 
 html {
   background: var(--bg);
+  scrollbar-width: none;
 }
 
 body {
@@ -37,7 +38,16 @@ body {
     var(--bg);
   color: var(--text);
   font-family: var(--sans);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   -webkit-font-smoothing: antialiased;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 body::before {
