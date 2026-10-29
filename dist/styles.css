@@ -148,11 +148,6 @@ img {
   transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1), filter 320ms ease;
 }
 
-.profile-avatar:hover {
-  transform: translateY(-5px) scale(1.025);
-  filter: drop-shadow(0 24px 44px rgb(0 0 0 / 70%));
-}
-
 .avatar-hex {
   display: block;
   width: 100%;
@@ -196,9 +191,9 @@ img {
   background: rgb(255 255 255 / 4.5%);
   box-shadow: inset 0 0 0 1px rgb(255 255 255 / 5.5%);
   transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.profile-links a:hover,
 .profile-links a:focus-visible {
   color: var(--bg);
   background: var(--text);
@@ -230,7 +225,6 @@ img {
   height: 19px;
 }
 
-.profile-links a:hover img,
 .profile-links a:focus-visible img {
   filter: invert(1);
 }
@@ -312,11 +306,6 @@ img {
   box-shadow: inset 0 0 130px rgb(0 0 0 / 48%);
 }
 
-.project-image:hover::before {
-  opacity: 0.29;
-  transform: scale(1.06);
-}
-
 .project-image > img,
 .project-image > picture {
   position: relative;
@@ -334,11 +323,6 @@ img {
 .project-image > picture > img {
   width: 100%;
   height: 100%;
-}
-
-.project-image:hover > img,
-.project-image:hover > picture {
-  transform: translateY(-4px) scale(1.035);
 }
 
 .project-image-grid,
@@ -410,9 +394,9 @@ img {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.project-links a:hover,
 .project-links a:focus-visible {
   color: var(--bg);
   background: var(--text);
@@ -425,7 +409,6 @@ img {
   height: 13px;
 }
 
-.project-links a:hover img,
 .project-links a:focus-visible img {
   filter: invert(1);
 }
@@ -442,6 +425,36 @@ img {
 
 .footer p {
   margin: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .profile-avatar:hover {
+    transform: translateY(-5px) scale(1.025);
+    filter: drop-shadow(0 24px 44px rgb(0 0 0 / 70%));
+  }
+
+  .profile-links a:hover,
+  .project-links a:hover {
+    color: var(--bg);
+    background: var(--text);
+    outline: none;
+    transform: translateY(-2px);
+  }
+
+  .profile-links a:hover img,
+  .project-links a:hover img {
+    filter: invert(1);
+  }
+
+  .project-image:hover::before {
+    opacity: 0.29;
+    transform: scale(1.06);
+  }
+
+  .project-image:hover > img,
+  .project-image:hover > picture {
+    transform: translateY(-4px) scale(1.035);
+  }
 }
 
 @media (max-width: 760px) {

@@ -6,6 +6,21 @@ if (year) {
   year.textContent = String(new Date().getFullYear());
 }
 
+const touchPointer = window.matchMedia("(hover: none), (pointer: coarse)");
+const clearTouchedLinkFocus = () => {
+  if (touchPointer.matches && document.activeElement instanceof HTMLAnchorElement) {
+    document.activeElement.blur();
+  }
+};
+
+document.addEventListener("click", (event) => {
+  if (!touchPointer.matches || !(event.target instanceof Element)) return;
+  const link = event.target.closest("a");
+  if (link instanceof HTMLAnchorElement) window.setTimeout(() => link.blur(), 0);
+});
+
+window.addEventListener("pageshow", clearTouchedLinkFocus);
+
 const field = document.querySelector("[data-signal-field]");
 
 const initSignalField = (field) => {
